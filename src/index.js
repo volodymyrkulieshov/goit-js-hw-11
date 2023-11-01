@@ -1,6 +1,6 @@
 import axios from 'axios';
 import { Notify } from 'notiflix/build/notiflix-notify-aio';
-import{BASE_URL,params} from './gallery-api'
+import{serviceSearchImage} from './gallery-api'
 // axios.defaults.headers.common['x-api-key'] =
 //   'live_mw1wBFgWwKML3FhpuSEsISiVgwRZVBIhpdCjmemzslSsGbt2r1BAtVkT7YtRxOLe';
 
