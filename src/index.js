@@ -30,7 +30,7 @@ const options = {
   threshold: 1.0,
 };
 
-const observer = new IntersectionObserver(handleIntersect, options);
+const observer = new IntersectionObserver(handlerIntersect, options);
 form.addEventListener('submit', handlerSearchForm);
 
 function handlerSearchForm(evt) {
@@ -62,16 +62,16 @@ async function searchPhotos() {
   }
 }
 
-function handleIntersect(evt) {
-  pixabayAPI.page += 1;
+function handlerIntersect(evt) {
   if (evt[0].isIntersecting) {
+    pixabayAPI.page += 1;
     searchMorePhotos();
   }
 }
 
 async function searchMorePhotos() {
   try {
-    const result = pixabayAPI.page * 40;
+    const result = pixabayAPI.page;
     const { data } = await pixabayAPI.fetchPhotos();
     gallery.insertAdjacentHTML('beforeend', createMarkup(data.hits));
     if (result >= data.totalHits) {
